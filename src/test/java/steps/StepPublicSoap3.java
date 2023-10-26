@@ -78,6 +78,9 @@ public class StepPublicSoap3 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaIsbn13.add(ArquivoTxt.lerArquivo(
                     "ISBN_" + i, "Dados_Excel-criarMassaIsbn13.txt"));
+
+            valoresColunaISBN13Result.add(new DadosResponseIsbn13(
+                    ArquivoTxt.lerArquivo("ISBN13RESULT_" + i, "Dados_Excel-criarMassaIsbn13.txt")));
         }
 
         for (String s : valoresColunaIsbn13) {
@@ -87,10 +90,6 @@ public class StepPublicSoap3 {
 
     @Entao("recebo um response valido")
     public void receboUmResponseValido() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaISBN13Result.add(new DadosResponseIsbn13(
-                    ArquivoTxt.lerArquivo("ISBN13RESULT_" + i, "Dados_Excel-criarMassaIsbn13.txt")));
-        }
 
         for (int i = 0; i < valoresColunaISBN13Result.size(); i++){
             resultIsbn13.get(i).then().log().all();
@@ -111,6 +110,9 @@ public class StepPublicSoap3 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaIsbn10.add(ArquivoTxt.lerArquivo(
                     "ISBN_" + i, "Dados_Excel-criarMassaIsbn10.txt"));
+
+            valoresColunaISBN10Result.add(new DadosResponseIsbn10(
+                    ArquivoTxt.lerArquivo("ISBN10RESULT_" + i, "Dados_Excel-criarMassaIsbn10.txt")));
         }
 
         for (String s : valoresColunaIsbn10) {
@@ -120,10 +122,6 @@ public class StepPublicSoap3 {
 
     @Entao("recebo um response valido como retorno")
     public void receboUmResponseValidoComoRetorno() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaISBN10Result.add(new DadosResponseIsbn10(
-                    ArquivoTxt.lerArquivo("ISBN10RESULT_" + i, "Dados_Excel-criarMassaIsbn10.txt")));
-        }
 
         for (int i = 0; i < valoresColunaISBN10Result.size(); i++){
             resultIsbn10.get(i).then().log().all();
@@ -144,6 +142,9 @@ public class StepPublicSoap3 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaCelsiusToFahrenheit.add(ArquivoTxt.lerArquivo(
                     "CELSIUSTOFAHRENHEIT_" + i, "Dados_Excel-criarMassaCelsiusToFahrenheit.txt"));
+
+            valoresColunaResult_CTF.add(new DadosResponseCeToFa(
+                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaCelsiusToFahrenheit.txt")));
         }
 
         for (String s : valoresColunaCelsiusToFahrenheit) {
@@ -153,10 +154,6 @@ public class StepPublicSoap3 {
 
     @Entao("recebo um response valido da conversao de Celsius para Farenheit")
     public void receboUmResponseValidoDaConversaoDeCelsiusParaFarenheit() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaResult_CTF.add(new DadosResponseCeToFa(
-                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaCelsiusToFahrenheit.txt")));
-        }
 
         for (int i = 0; i < valoresColunaResult_CTF.size(); i++){
             resultCelsiusToFahrenheit.get(i).then().log().all();
@@ -177,6 +174,9 @@ public class StepPublicSoap3 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaFahrenheitToCelsius.add(ArquivoTxt.lerArquivo(
                     "FAHRENHEITTOCELSIUS_" + i, "Dados_Excel-criarMassaFahrenheitToCelsius.txt"));
+
+            valoresColunaResult_FTC.add(new DadosResponseFaToCe(
+                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaFahrenheitToCelsius.txt")));
         }
 
         for (String s : valoresColunaFahrenheitToCelsius) {
@@ -186,10 +186,6 @@ public class StepPublicSoap3 {
 
     @Entao("recebo um response valido da conversao de Farenheit para Celsius")
     public void receboUmResponseValidoDaConversaoDeFarenheitParaCelsius() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaResult_FTC.add(new DadosResponseFaToCe(
-                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaFahrenheitToCelsius.txt")));
-        }
 
         for (int i = 0; i < valoresColunaResult_FTC.size(); i++){
             resultFahrenheitToCelsius.get(i).then().log().all();

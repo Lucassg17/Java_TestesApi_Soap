@@ -54,6 +54,9 @@ public class StepPublicSoap {
         for (int i = 1; i <= linhas; i++) {
             valoresColunaNumbers_NumberToWords.add(ArquivoTxt.lerArquivo(
                     "NUMBERS_" + i, "Dados_Excel-criarMassaNumberToWords.txt"));
+
+            valoresColunaWords_NumberToWords.add(new DadosResponseNumberToWords(
+                    ArquivoTxt.lerArquivo("WORDS_" + i, "Dados_Excel-criarMassaNumberToWords.txt")));
         }
 
         for (String valoresColunaNumbersNumberToWord : valoresColunaNumbers_NumberToWords) {
@@ -63,10 +66,6 @@ public class StepPublicSoap {
 
     @Entao("recebo um response correto")
     public void receboUmResponseCorreto() throws Exception {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaWords_NumberToWords.add(new DadosResponseNumberToWords(
-                    ArquivoTxt.lerArquivo("WORDS_" + i, "Dados_Excel-criarMassaNumberToWords.txt")));
-        }
 
         for (int i = 0; i < valoresColunaWords_NumberToWords.size(); i++){
             resultNumberToWords.get(i).then().log().all();
@@ -87,6 +86,9 @@ public class StepPublicSoap {
         for (int i = 1; i <= linhas; i++) {
             valoresColunaNumbers_NumberToDollars.add(ArquivoTxt.lerArquivo(
                     "NUMBERS_" + i, "Dados_Excel-criarMassaNumberToDollars.txt"));
+
+            valoresColunaDollars_NumberToDollars.add(new DadosResponseNumberToDollars(
+                    ArquivoTxt.lerArquivo("DOLLARS_" + i, "Dados_Excel-criarMassaNumberToDollars.txt")));
         }
 
         for (String valoresColunaNumbersNumberToDollar : valoresColunaNumbers_NumberToDollars) {
@@ -97,10 +99,6 @@ public class StepPublicSoap {
 
     @Entao("meu response retorna conforme solicitado")
     public void meuResponseRetornaConformeSolicitado() throws Exception {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaDollars_NumberToDollars.add(new DadosResponseNumberToDollars(
-                    ArquivoTxt.lerArquivo("DOLLARS_" + i, "Dados_Excel-criarMassaNumberToDollars.txt")));
-        }
 
         for (int i = 0; i < valoresColunaDollars_NumberToDollars.size(); i++){
             resultNumberToDollars.get(i).then().log().all();
@@ -124,6 +122,9 @@ public class StepPublicSoap {
 
             valoresColunaIntB_Divide.add(ArquivoTxt.lerArquivo(
                     "IntB_" + i, "Dados_Excel-criarMassaDivide.txt"));
+
+            valoresColunaResult_Divide.add(new DadosResponseDivide(
+                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaDivide.txt")));
         }
 
         for (int i = 0; i < valoresColunaIntA_Divide.size(); i++) {
@@ -133,10 +134,6 @@ public class StepPublicSoap {
 
     @Entao("meu response retorna com o calculo de divisao correto")
     public void meuResponseRetornaComOCalculoDeDivisaoCorreto() throws Exception {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaResult_Divide.add(new DadosResponseDivide(
-                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaDivide.txt")));
-        }
 
         for (int i = 0; i < valoresColunaResult_Divide.size(); i++){
             resultDivide.get(i).then().log().all();
@@ -160,6 +157,9 @@ public class StepPublicSoap {
 
             valoresColunaIntB_Multiply.add(ArquivoTxt.lerArquivo(
                     "IntB_" + i, "Dados_Excel-criarMassaMultiply.txt"));
+
+            valoresColunaResult_Multiply.add(new DadosResponseMultiply(
+                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaMultiply.txt")));
         }
 
         for (int i = 0; i < valoresColunaIntA_Multiply.size(); i++) {
@@ -169,10 +169,6 @@ public class StepPublicSoap {
 
     @Entao("meu response retorna com o calculo da multiplicacao corretamente")
     public void meuResponseRetornaComOCalculoDaMultiplicacaoCorretamente() {
-        for (int i = 1; i <= linhas; i++){
-            valoresColunaResult_Multiply.add(new DadosResponseMultiply(
-                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaMultiply.txt")));
-        }
 
         for (int i = 0; i < valoresColunaResult_Multiply.size(); i++){
             resultMultiply.get(i).then().log().all();
@@ -196,6 +192,9 @@ public class StepPublicSoap {
 
             valoresColunaIntB_Subtract.add(ArquivoTxt.lerArquivo(
                     "IntB_" + i, "Dados_Excel-criarMassaSubtract.txt"));
+
+            valoresColunaResult_Subtract.add(new DadosResponseSubtract(
+                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaSubtract.txt")));
         }
 
         for (int i = 0; i < valoresColunaIntA_Subtract.size(); i++) {
@@ -205,10 +204,6 @@ public class StepPublicSoap {
 
     @Entao("recebo como retorno o calculo da subtracao corretamente")
     public void receboComoRetornoOCalculoDaSubtracaoCorretamente() {
-        for (int i = 1; i <= linhas; i++){
-            valoresColunaResult_Subtract.add(new DadosResponseSubtract(
-                    ArquivoTxt.lerArquivo("RESULT_" + i, "Dados_Excel-criarMassaSubtract.txt")));
-        }
 
         for (int i = 0; i < valoresColunaResult_Subtract.size(); i++){
             resultSubtract.get(i).then().log().all();

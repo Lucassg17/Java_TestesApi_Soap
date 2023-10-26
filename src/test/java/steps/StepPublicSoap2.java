@@ -79,6 +79,9 @@ public class StepPublicSoap2 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaCountry.add(ArquivoTxt.lerArquivo(
                     "COUNTRY_" + i, "Dados_Excel-criarMassaCapitalCountry.txt"));
+
+            valoresColunaCapitalCity.add(new DadosResponseCapitalCityCountry(
+                    ArquivoTxt.lerArquivo("CAPITALCITY_" + i, "Dados_Excel-criarMassaCapitalCountry.txt")));
         }
 
         for (String s : valoresColunaCountry) {
@@ -88,10 +91,6 @@ public class StepPublicSoap2 {
 
     @Entao("recebo como retorno a capital do pais corretamente")
     public void receboComoRetornoACapitalDoPaisCorretamente() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaCapitalCity.add(new DadosResponseCapitalCityCountry(
-                    ArquivoTxt.lerArquivo("CAPITALCITY_" + i, "Dados_Excel-criarMassaCapitalCountry.txt")));
-        }
 
         for (int i = 0; i < valoresColunaCapitalCity.size(); i++){
             resultCapitalCityCountry.get(i).then().log().all();
@@ -112,6 +111,9 @@ public class StepPublicSoap2 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaCountryIsoCode_Currency.add(ArquivoTxt.lerArquivo(
                     "COUNTRYISOCODE_" + i, "Dados_Excel-criarMassaCurrencyCountry.txt"));
+
+            valoresColunaSname.add(new DadosResponseCurrencyCountry(
+                    ArquivoTxt.lerArquivo("SNAME_" + i, "Dados_Excel-criarMassaCurrencyCountry.txt")));
         }
 
         for (String s : valoresColunaCountryIsoCode_Currency) {
@@ -121,10 +123,6 @@ public class StepPublicSoap2 {
 
     @Entao("recebo como retorno a moeda do pais corretamente")
     public void receboComoRetornoAMoedaDoPaisCorretamente() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaSname.add(new DadosResponseCurrencyCountry(
-                    ArquivoTxt.lerArquivo("SNAME_" + i, "Dados_Excel-criarMassaCurrencyCountry.txt")));
-        }
 
         for (int i = 0; i < valoresColunaSname.size(); i++){
             resultCurrencyCountry.get(i).then().log().all();
@@ -145,6 +143,9 @@ public class StepPublicSoap2 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaCountryIsoCode_Flag.add(ArquivoTxt.lerArquivo(
                     "COUNTRYISOCODE_" + i, "Dados_Excel-criarMassaFlagCountry.txt"));
+
+            valoresColunaFlagCountry.add(new DadosResponseFlagCountry(
+                    ArquivoTxt.lerArquivo("FLAGCOUNTRY_" + i, "Dados_Excel-criarMassaFlagCountry.txt")));
         }
 
         for (String s : valoresColunaCountryIsoCode_Flag) {
@@ -154,10 +155,6 @@ public class StepPublicSoap2 {
 
     @Entao("recebo como retorno de um link para uma imagem da bandeira do pais corretamente")
     public void receboComoRetornoDeUmLinkParaUmaImagemDaBandeiraDoPaisCorretamente() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaFlagCountry.add(new DadosResponseFlagCountry(
-                    ArquivoTxt.lerArquivo("FLAGCOUNTRY_" + i, "Dados_Excel-criarMassaFlagCountry.txt")));
-        }
 
         for (int i = 0; i < valoresColunaFlagCountry.size(); i++){
             resultFlagCountry.get(i).then().log().all();
@@ -178,6 +175,9 @@ public class StepPublicSoap2 {
         for (int i = 1; i <= linhas; i++){
             valoresColunaCountryIsoCode_PhoneCode.add(ArquivoTxt.lerArquivo(
                     "COUNTRYISOCODE_" + i, "Dados_Excel-criarMassaMassaInterPhoneCountry.txt"));
+
+            valoresColunaPhoneCodeCountry.add(new DadosResponsePhoneCode(
+                    ArquivoTxt.lerArquivo("PHONECODE_" + i, "Dados_Excel-criarMassaMassaInterPhoneCountry.txt")));
         }
 
         for (String s : valoresColunaCountryIsoCode_PhoneCode) {
@@ -187,10 +187,6 @@ public class StepPublicSoap2 {
 
     @Entao("recebo como retorno o codigo de telefone internacional do pais")
     public void receboComoRetornoOCodigoDeTelefoneInternacionalDoPais() {
-        for (int i = 1; i <= linhas; i++) {
-            valoresColunaPhoneCodeCountry.add(new DadosResponsePhoneCode(
-                    ArquivoTxt.lerArquivo("PHONECODE_" + i, "Dados_Excel-criarMassaMassaInterPhoneCountry.txt")));
-        }
 
         for (int i = 0; i < valoresColunaPhoneCodeCountry.size(); i++){
             resultPhoneCodeCountry.get(i).then().log().all();
